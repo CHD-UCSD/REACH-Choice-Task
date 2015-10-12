@@ -806,7 +806,7 @@ while True:
         else:
             output = all_games[task_chosen].run_game(win, grade, all_thresholds[task_chosen], "") #None, all_sheets[task_chosen]['sheet'])
 
-        score = output.get('score', 0) if output else 0
+        score = output.get('score', 0) or 0 if output else 0
         thesePoints += score*(this_task["points"])*point_intervals
 
         #first write trial number to output, then write the output variables
